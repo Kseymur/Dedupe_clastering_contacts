@@ -371,12 +371,17 @@ if __name__ == '__main__':
                 deduper.write_training(tf)
 
         print("Модель готова к обучению")
-        deduper.train()  # здесь мы собственно обучаем модель на размеченных данных. может потребоваться какое-то время
-        print("Приступаем к кластеризации")
+        try:
+            deduper.train() # здесь мы собственно обучаем модель на размеченных данных. может потребоваться какое-то время
+            print("Приступаем к кластеризации")
 
-        clastering(deduper, data_for_training) # проводим кластеризацию и доразметку
+            clastering(deduper, data_for_training)
 
-        print("Работа завершена. Сохраняем настройки модели")
+            print("Работа завершена. Сохраняем настройки модели")
 
-        with open(settings_file, 'wb') as sf: #записываем настройки модели в файл
-            deduper.write_settings(sf)
+            with open(settings_file, 'wb') as sf:
+                deduper.write_settings(sf)
+        except ValueError as e:
+            # Обработка ошибки ValueError
+            print("Ошибка при обучении модели dedupe. Вы не дали модели ни одного размеченного примера. Попробуйте заново, удалив тренировочный файл:", str(e))
+
