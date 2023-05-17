@@ -1,4 +1,4 @@
-### Dedupe: алгоритм поиска дублей в базе данных контактов, выгруженных с Amocrm.
+### Dedupe: алгоритм поиска дублей в базе данных контактов, выгруженных с amoCRM.
 
 #### Общее описание
 
@@ -26,6 +26,6 @@
 
 #### Ссылки.
 
-- [Документация Dedupe](https://docs.dedupe.io/en/latest/API-documentation.html). 
+- [Документация Dedupe](https://docs.dedupe.io/en/latest/API-documentation.html)
 - [Документация по работе с контактами amoCRM](https://www.amocrm.ru/developers/content/crm_platform/contacts-api)
 
